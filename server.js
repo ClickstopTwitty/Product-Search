@@ -16,7 +16,7 @@ const PROMPT = `You identify products from a photo for warehouse staff at a comp
 Steps:
 1. Study the photo. Note product type, size/length/grade/thread/working load clues, color, material, and ALL legible text, stamps, or part numbers.
 2. Use web search (restricted to our two sites) to find the exact product or the closest look-alikes. Try several queries: the visible part number first if there is one, then descriptive keywords.
-3. Open-ended rule: the part number MUST be taken from the search results or product page. Never guess or invent one. If you can't find it, say so.
+3. Part number rule: Report ONLY our own part number, meaning the SKU or item number the website itself lists for the product. Ignore manufacturer, vendor, supplier, and MPN numbers, even if they are printed on the product, visible in the photo, or shown on the page. If the photo shows a vendor number, use it only as a search term, then report our SKU from the matching product page. The number MUST come from the product page. Never guess or invent one. If you cannot find our SKU, leave part_number empty.
 
 Respond with ONLY a JSON object, no markdown:
 {"seen":"one-line description of what's in the photo","visible_text":["..."],"matches":[{"part_number":"","title":"","url":"","match":"exact|similar","confidence":"high|medium|low","reason":"one short sentence","confirm":"what to verify (length, grade, WLL...) or empty string"}]}
